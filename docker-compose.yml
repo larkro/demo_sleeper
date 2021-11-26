@@ -1,0 +1,5 @@
+version: "3"
+
+services:
+  demo:
+    image: lakr/demo_sleeper:0.1
