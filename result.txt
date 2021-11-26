@@ -1,0 +1,61 @@
+➜  demo_sleeper git:(main) make all
+docker build -t lakr/demo_sleeper:0.1 .
+[+] Building 1.5s (10/10) FINISHED
+ => [internal] load build definition from Dockerfile                                                                                                                                          0.0s
+ => => transferring dockerfile: 37B                                                                                                                                                           0.0s
+ => [internal] load .dockerignore                                                                                                                                                             0.0s
+ => => transferring context: 2B                                                                                                                                                               0.0s
+ => [internal] load metadata for docker.io/library/ruby:3.0.2                                                                                                                                 1.3s
+ => [1/5] FROM docker.io/library/ruby:3.0.2@sha256:15dd21ae353c5f4faebed038d9d131c47b9fd84c14be8c3cfbc750204b63f009                                                                           0.0s
+ => [internal] load build context                                                                                                                                                             0.0s
+ => => transferring context: 37B                                                                                                                                                              0.0s
+ => CACHED [2/5] RUN mkdir /app                              && apt-get update && apt-get clean      && rm -rf /var/lib/apt/lists/*                                                           0.0s
+ => CACHED [3/5] WORKDIR /app                                                                                                                                                                 0.0s
+ => CACHED [4/5] RUN gem install async:1.30.1                                                                                                                                                 0.0s
+ => CACHED [5/5] COPY demo_sleeper.rb .                                                                                                                                                       0.0s
+ => exporting to image                                                                                                                                                                        0.0s
+ => => exporting layers                                                                                                                                                                       0.0s
+ => => writing image sha256:5095c90c72ddd4984caec969162c6aea3190e84a4cd15f5ee40eb3ab930f1845                                                                                                  0.0s
+ => => naming to docker.io/lakr/demo_sleeper:0.1                                                                                                                                              0.0s
+docker run lakr/demo_sleeper:0.1
+before
+first inside
+last inside
+Duration: 2.4955872
+docker-compose up --remove-orphans --scale=demo=5
+Starting demo_demo_1 ... done
+Starting demo_demo_2 ... done
+Starting demo_demo_3 ... done
+Starting demo_demo_4 ... done
+Starting demo_demo_5 ... done
+Attaching to demo_demo_1, demo_demo_2, demo_demo_3, demo_demo_4, demo_demo_5
+demo_2  | before
+demo_2  | first inside
+demo_5  | before
+demo_5  | first inside
+demo_3  | before
+demo_3  | first inside
+demo_4  | before
+demo_4  | first inside
+demo_1  | before
+demo_1  | first inside
+demo_5  | last inside
+demo_5  | Duration: 2.6452738
+demo_demo_5 exited with code 0
+demo_2  | last inside
+demo_2  | Duration: 2.654949
+demo_3  | last inside
+demo_3  | Duration: 2.5489248
+demo_4  | last inside
+demo_4  | Duration: 2.5082146
+demo_1  | last inside
+demo_1  | Duration: 2.5478737
+demo_demo_2 exited with code 0
+demo_demo_3 exited with code 0
+demo_demo_4 exited with code 0
+demo_demo_1 exited with code 0
+./demo_sleeper.rb
+before
+first inside
+last inside
+Duration: 2.249726
