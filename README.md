@@ -2,7 +2,7 @@
 
 * Ruby version
 
-3.0.2
+3.0.3
 
 * System dependencies
 
