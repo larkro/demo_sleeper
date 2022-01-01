@@ -1,8 +1,8 @@
 image: ## docker build the image
-	docker build -t lakr/demo_sleeper:0.1 .
+	docker build -t lakr/demo_sleeper:0.2 .
 
 run: ## docker run the demo
-	docker run lakr/demo_sleeper:0.1
+	docker run lakr/demo_sleeper:0.2
 
 docker: image run
 
