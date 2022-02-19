@@ -1,4 +1,4 @@
-FROM ruby:3.1.0
+FROM ruby:3.1.1
 
 RUN mkdir /app                          \ 
     && apt-get update && apt-get clean  \
