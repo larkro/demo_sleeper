@@ -2,7 +2,9 @@
 
 * Ruby version
 
-3.0.3
+Trying to use latest.
+As of writing, we use:
+3.1.1
 
 * System dependencies
 
