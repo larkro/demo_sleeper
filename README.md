@@ -4,7 +4,7 @@
 
 Trying to use latest.
 As of writing, we use:
-3.1.1
+3.1.2
 
 * System dependencies
 
